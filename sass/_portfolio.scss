@@ -1,0 +1,118 @@
+/*Портфоліо*/
+
+.portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-list {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-left: 0;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.btn {
+    border-radius: 4px;
+    border: none;
+    padding: 6px 21px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: calc(26 / 16);
+    background-color: var(--btn-bg-cl);
+    transition: background-color var(--anim-fast-hv), color var(--anim-fast-hv),
+        box-shadow var(--anim-fast-hv);
+}
+
+.filter-item:not(:last-child) {
+    margin-right: 8px;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--btn-bg-hover);
+    color: var(--btn-text-hover);
+    box-shadow: var(--btn-shadow-hv);
+}
+
+.portfolio-list {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.portfolio-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: calc(36 / 18);
+    letter-spacing: 0.06em;
+}
+
+.portfolio-text {
+    font-size: 16px;
+    line-height: calc(30 / 16);
+    color: var(--secondary-txt-cl);
+    margin-top: 4px;
+}
+
+.portfolio-item {
+    width: 370px;
+}
+
+.portfolio-group {
+    padding: 20px 24px 19px 24px;
+    border-left: var(--portfolio-cards-border);
+    border-right: var(--portfolio-cards-border);
+    border-bottom: var(--portfolio-cards-border);
+}
+
+.portfolio-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow var(--anim-fast-hv);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+    box-shadow: var(--portfolio-shadow-hv);
+}
+
+.portfolio-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: transform var(--anim-fast-hv);
+    background-color: var(--portfolio-box-bg);
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.portfolio-description {
+    font-size: 18px;
+    line-height: calc(28 / 14);
+    color: var(--white-title-cl);
+}
+
+.portfolio-link:hover .portfolio-overlay {
+    transform: translateY(0);
+}
