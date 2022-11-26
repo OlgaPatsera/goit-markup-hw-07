@@ -1,12 +1,11 @@
 /*Clients*/
-.clients-title {
-    font-size: 36px;
-    line-height: calc(42 / 36);
+.clients__title {
+    @include font(null, 36px, calc(42 / 36), null);
     text-align: center;
     margin-bottom: 50px;
 }
 
-.clients-list {
+.clients__points {
     display: flex;
     list-style: none;
     margin-top: 0;
@@ -15,29 +14,26 @@
     gap: 30px;
 }
 
-.clients-link {
-    display: flex;
+.points__item {
+    flex-basis: calc((100% - 150px) / 6);
+}
+
+.points__link {
+    @extend %list;
     border: 1px solid #afb1b8;
     border-radius: 4px;
     height: 92px;
-    justify-content: center;
-    align-items: center;
     color: var(--clients-icon-cl);
     transition: color var(--anim-fast-hv), border-color var(--anim-fast-hv);
+    &:hover,
+    &:focus {
+        color: var(--link-hvr-cl);
+        border-color: var(--link-hvr-cl);
+    }
 }
-
-.clients-icon {
+.points__icon {
     width: 106px;
     height: 60px;
     fill: currentColor;
 }
 
-.clients-item {
-    flex-basis: calc((100% - 150px) / 6);
-}
-
-.clients-link:hover,
-.clients-link:focus {
-    color: var(--link-hvr-cl);
-    border-color: var(--link-hvr-cl);
-}

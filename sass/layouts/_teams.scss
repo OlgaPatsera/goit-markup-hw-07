@@ -1,11 +1,13 @@
-
-.teams-group {
-    background-color: var(--teams-bg);
-    border-radius: var(--teams-border-radius);
-    padding: 30px 32px;
+.teams {
+    background-color: var(--light-bg-cl);
 }
 
-.teams-list {
+.teams__title {
+    @include font(700, 36px, calc(42 / 36), null);
+    text-align: center;
+}
+
+.teams__members {
     display: flex;
     margin-top: 50px;
     margin-bottom: 0;
@@ -13,75 +15,40 @@
     list-style: none;
 }
 
-.teams-item {
+.members__item {
     display: flex;
     flex-direction: column;
     width: 270px;
     border-radius: var(--teams-border-radius);
     box-shadow: var(--teams-border-shadow);
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
 }
 
-.teams-item:not(:last-child) {
-    margin-right: 30px;
+.members__group {
+    background-color: var(--teams-bg);
+    border-radius: var(--teams-border-radius);
+    padding: 30px 32px;
 }
 
-.teams-title {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: calc(42 / 36);
+.members__subtitle {
+    @include font(500, 16px, calc(19 / 16), null);
     text-align: center;
 }
 
-.teams {
-    background-color: var(--light-bg-cl);
-}
-
-.teams-subtitle {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: calc(19 / 16);
-    text-align: center;
-}
-
-.teams-text {
+.members__text {
     margin-top: 10px;
     margin-bottom: 16px;
-    font-size: 16px;
-    line-height: calc(19 / 16);
+    @include font(null, 16px, calc(19 / 16), null);
     color: var(--secondary-txt-cl);
     text-align: center;
 }
 
-.social-list {
+.members__social {
     display: flex;
     list-style: none;
     margin: 0;
     padding-left: 0;
-}
-
-.social-link {
-    display: flex;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    color: var(--social-icon-cl);
-    justify-content: center;
-    align-items: center;
-    transition: background-color var(--anim-fast-hv), color var(--anim-fast-hv);
-}
-
-.social-link:hover,
-.social-link:focus {
-    background-color: var(--social-link-bg);
-    color: var(--social-hv-icon);
-}
-
-.social-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
-
-.social-item:not(:last-child) {
-    margin-right: 10px;
 }

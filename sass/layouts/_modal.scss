@@ -35,16 +35,13 @@
     border: 1px solid var(--vector-border-modal);
     background-color: var(--accent-bg-cl);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %list;
     cursor: pointer;
     transition: fill var(--anim-fast-hv);
-}
-
-.btn-close:hover,
-.btn-close:focus {
-    fill: #2196f3;
+    &:hover,
+    &:focus {
+            fill: #2196f3;
+    }
 }
 
 .hero-backdrop.is-hidden {
@@ -55,9 +52,7 @@
 
 .modal-title {
     text-align: center;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: calc(23 / 20);
+    @include font(700, 20px, calc(23 / 20), null);
     margin-bottom: 12px;
 }
 
@@ -70,14 +65,9 @@
     padding-left: 42px;
     outline: transparent;
     cursor: pointer;
-}
-
-.modal-input:focus {
-    border-color: #2196f3;
-}
-
-.modal-input:focus+.modal-input-icon {
-    fill: #2196f3;
+    &:focus {
+        border-color: #2196f3;
+    }
 }
 
 .modal-field:not(:last-child) {
@@ -97,17 +87,15 @@
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    .modal-input:focus+& {
+        fill: #2196f3;
+    }
 }
 
 .input-label {
     color: var(--secondary-txt-cl);
-    font-size: 12px;
-    line-height: calc(14 / 12);
-    letter-spacing: 0.01em;
+    @include font(null, 12px, calc(14 / 12), 0.01em);
     text-align: left;
-}
-
-.input-label span {
     display: block;
     margin-bottom: 4px;
 }
@@ -122,17 +110,13 @@
     resize: none;
     cursor: pointer;
     display: block;
-}
-
-.modal-comment:focus {
-    border-color: #2196f3;
-}
-
-.modal-comment::placeholder {
-    font-size: 12px;
-    line-height: calc(14 / 12);
-    letter-spacing: 0.01em;
-    color: rgba(117, 117, 117, 0.5);
+    &:focus {
+        border-color: #2196f3;
+    }
+    &::placeholder {
+        @include font(null, 12px, calc(14 / 12), 0.01em);
+        color: rgba(117, 117, 117, 0.5);
+    }
 }
 
 .field-comment {
@@ -146,30 +130,22 @@
     text-align: center;
     background-color: #2196f3;
     color: var(--white-title-cl);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: calc(30 / 16);
-    letter-spacing: 0.06em;
+    @include font(700, 16px, calc(30 / 16), 0.06em);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
     cursor: pointer;
     transition: background-color var(--anim-fast-hv);
-}
-
-.btn-modal:hover,
-.btn-modal:focus {
-    background-color: #188ce8;
+    &:hover,
+    &:focus {
+        background-color: #188ce8;
+    }
 }
 
 .check-text {
     color: var(--secondary-txt-cl);
-    font-size: 14px;
-    line-height: calc(24 / 14);
-    letter-spacing: 0.03em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include font(null, 14px, calc(24 / 14), 0.03em);
+    @extend %list;
 }
 
 .check-text span {
@@ -178,22 +154,17 @@
     border: 2px solid #212121;
     border-radius: 4px;
     margin-right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %list;
     fill: transparent;
-}
-
-.input-check:checked+.check-text span {
-    background-color: #2196f3;
-    border: transparent;
-    fill: #fff;
+    .input-check:checked+& {
+        background-color: #2196f3;
+        border: transparent;
+        fill: #fff;
+    }
 }
 
 .link-agree {
     color: #2196f3;
-    font-size: 14px;
-    line-height: calc(24 / 14);
-    letter-spacing: 0.03em;
+    @include font(null, 14px, calc(24 / 14), 0.03em);
     margin-left: 6px;
 }

@@ -1,9 +1,9 @@
 /*Особливості*/
-.feature-container {
+.feature__container {
     display: flex;
 }
 
-.feature-list {
+.feature__aspect {
     display: flex;
     margin-top: 0;
     margin-bottom: 0;
@@ -11,38 +11,32 @@
     gap: 30px;
 }
 
-.feature-item {
+.aspect__item {
     display: flex;
     flex-direction: column;
     width: 270px;
     list-style: none;
 }
 
-
-.feature-title {
-    margin-bottom: 10px;
-
-    font-weight: 700;
-    line-height: calc(16 / 14);
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.feature-text {
-    color: var(--secondary-txt-cl);
-}
-
-.feature-group {
-    display: flex;
+.aspect__group {
+    @extend %list;
     height: 120px;
     background-color: var(--feature-icon-bg);
     border-radius: 4px;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 30px;
 }
 
-.feature-icon {
+.aspect__icon {
     width: 70px;
     height: 70px;
+}
+
+.aspect__title {
+    margin-bottom: 10px;
+    @include font(700, 14px, calc(16 / 14), null);
+    text-transform: uppercase;
+}
+
+.aspect__text {
+    color: var(--secondary-txt-cl);
 }
